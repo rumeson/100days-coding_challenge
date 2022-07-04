@@ -31,6 +31,7 @@ int main()
 			if (salary[i] < 1000 || salary[i] > 1000000)
 			{
 				printf("Check Salary input, must be over 1,000 and below 1,000,000\n");
+				salary[i] = 0;
 			}
 		}
 	}
@@ -43,7 +44,7 @@ int main()
 	//set min and max salaries
 	for (int i = 1; i <= sal_num; i++)
 	{
-		if (i == 1)
+		if (i == 1 && salary[i] != 0)
 			min = salary[i];
 
 		if (max < salary[i])
@@ -51,7 +52,7 @@ int main()
 			max = salary[i];
 		}
 
-		if (min > salary[i])
+		if (min > salary[i] && salary[i] != 0)
 		{
 			min = salary[i];
 		}
